@@ -34,7 +34,7 @@
 
     return /*#__PURE__*/_react.default.createElement("button", _extends({
       style: {
-        backgroundColor: "violet",
+        backgroundColor: "red",
         color: "white"
       }
     }, rest), children);
