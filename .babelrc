@@ -1,0 +1,25 @@
+
+{
+  "presets": [
+      ["@babel/preset-env", { "modules": "umd" }],
+      "@babel/typescript",
+      "@babel/react"
+  ],
+  "plugins": [
+      "@babel/proposal-class-properties",
+      "@babel/proposal-object-rest-spread",
+      "@babel/plugin-syntax-export-default-from"
+  ],
+  "ignore": [
+    "**/*.stories.js",
+    "**/*.stories.tsx",
+    "src/index.d.ts"
+  ],
+  "env": {
+    "test": {
+      "plugins": [
+        "@babel/plugin-transform-runtime"
+      ]
+    }
+  }
+}
