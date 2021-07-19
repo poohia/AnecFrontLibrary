@@ -3,6 +3,7 @@ import React from "react";
 
 import { Meta } from "@storybook/react";
 
+import "../styles/modules/button.css";
 import Button from ".";
 
 export default {
