@@ -1,16 +1,16 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["exports", "react", "../styles/modules/button.css"], factory);
+    define(["exports", "react"], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require("react"), require("../styles/modules/button.css"));
+    factory(exports, require("react"));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports, global.react, global.button);
+    factory(mod.exports, global.react);
     global.index = mod.exports;
   }
-})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function (_exports, _react, _button) {
+})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function (_exports, _react) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
