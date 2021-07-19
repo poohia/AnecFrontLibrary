@@ -2,17 +2,17 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["exports", "react"], factory);
+    define(["exports", "react", "../Form/Field"], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require("react"));
+    factory(exports, require("react"), require("../Form/Field"));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports, global.react);
+    factory(mod.exports, global.react, global.Field);
     global.index = mod.exports;
   }
-})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function (_exports, _react) {
+})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function (_exports, _react, _Field) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
@@ -20,7 +20,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   });
   _exports.default = void 0;
   _react = _interopRequireWildcard(_react);
-  var _excluded = ["children", "fluid", "className", "icon"];
+  _Field = _interopRequireDefault(_Field);
+  var _excluded = ["children", "id", "className", "label", "required"];
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
   function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -32,30 +35,33 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
   function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-  var Button = function Button(_ref) {
+  var Input = function Input(_ref) {
     var children = _ref.children,
-        fluid = _ref.fluid,
+        id = _ref.id,
         _ref$className = _ref.className,
         className = _ref$className === void 0 ? "" : _ref$className,
-        icon = _ref.icon,
+        label = _ref.label,
+        required = _ref.required,
         rest = _objectWithoutProperties(_ref, _excluded);
 
     var classNameValue = (0, _react.useMemo)(function () {
-      var value = "anec--btn waves-effect btn";
+      var value = "anec--input-field col s12 m9 offset-m1";
 
-      if (fluid) {
-        value += " fluid";
+      if (required) {
+        value += " required";
       }
 
       return "".concat(value, " ").concat(className);
-    }, [className, fluid]);
-    return /*#__PURE__*/_react.default.createElement("button", _extends({
+    }, [className, required]);
+    return /*#__PURE__*/_react.default.createElement(_Field.default, {
       className: classNameValue
-    }, rest), icon && /*#__PURE__*/_react.default.createElement("i", {
-      className: "material-icons right"
-    }, icon), children);
+    }, /*#__PURE__*/_react.default.createElement("label", {
+      htmlFor: id ? id : undefined
+    }, label), /*#__PURE__*/_react.default.createElement("input", _extends({
+      id: id
+    }, rest)));
   };
 
-  var _default = Button;
+  var _default = Input;
   _exports.default = _default;
 });

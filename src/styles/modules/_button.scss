@@ -1,0 +1,11 @@
+.anec--btn {
+  background-color: $primary;
+  &.fluid {
+    width: 100%;
+  }
+  &.btn:hover,
+  &.btn-large:hover,
+  &.btn-small:hover {
+    background-color: $primary;
+  }
+}

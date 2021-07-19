@@ -3,7 +3,7 @@ import React from "react";
 
 import { Meta } from "@storybook/react";
 
-import "../styles/modules/button.css";
+import "../index.css";
 import Button from ".";
 
 export default {
@@ -11,4 +11,4 @@ export default {
   component: Button,
 } as Meta;
 
-export const Primary = () => <Button primary>Button</Button>;
+export const ButtonComponent = () => <Button>Button</Button>;

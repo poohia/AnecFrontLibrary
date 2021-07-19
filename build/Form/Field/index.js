@@ -20,7 +20,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   });
   _exports.default = void 0;
   _react = _interopRequireWildcard(_react);
-  var _excluded = ["children", "fluid", "className", "icon"];
+  var _excluded = ["children", "className"];
 
   function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -32,30 +32,21 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
   function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-  var Button = function Button(_ref) {
+  var Field = function Field(_ref) {
     var children = _ref.children,
-        fluid = _ref.fluid,
         _ref$className = _ref.className,
         className = _ref$className === void 0 ? "" : _ref$className,
-        icon = _ref.icon,
         rest = _objectWithoutProperties(_ref, _excluded);
 
     var classNameValue = (0, _react.useMemo)(function () {
-      var value = "anec--btn waves-effect btn";
-
-      if (fluid) {
-        value += " fluid";
-      }
-
+      var value = "anec--input-field col s12 m9 offset-m1";
       return "".concat(value, " ").concat(className);
-    }, [className, fluid]);
-    return /*#__PURE__*/_react.default.createElement("button", _extends({
+    }, [className]);
+    return /*#__PURE__*/_react.default.createElement("div", _extends({
       className: classNameValue
-    }, rest), icon && /*#__PURE__*/_react.default.createElement("i", {
-      className: "material-icons right"
-    }, icon), children);
+    }, rest), children);
   };
 
-  var _default = Button;
+  var _default = Field;
   _exports.default = _default;
 });

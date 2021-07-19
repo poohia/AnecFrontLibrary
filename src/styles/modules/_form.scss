@@ -1,0 +1,95 @@
+.annec--form {
+  .row {
+    background-color: white;
+    border-radius: 3px;
+    padding: 30px 10px;
+  }
+
+  label,
+  p,
+  button {
+    color: #34495e;
+    margin-bottom: 10px;
+    font-size: large;
+  }
+  button[type="submit"] {
+    color: white;
+  }
+}
+
+.anec--input-field {
+  &.required label {
+    &::after {
+      margin: -0.2em 0 0 0.2em;
+      content: "*";
+      color: $danger;
+    }
+  }
+  margin-bottom: 10px;
+  input:not([type]),
+  input[type="text"]:not(.browser-default),
+  input[type="password"]:not(.browser-default),
+  input[type="email"]:not(.browser-default),
+  input[type="url"]:not(.browser-default),
+  input[type="time"]:not(.browser-default),
+  input[type="date"]:not(.browser-default),
+  input[type="datetime"]:not(.browser-default),
+  input[type="datetime-local"]:not(.browser-default),
+  input[type="tel"]:not(.browser-default),
+  input[type="number"]:not(.browser-default),
+  input[type="search"]:not(.browser-default),
+  textarea.materialize-textarea {
+    background-color: #34495e;
+    border-radius: 10px;
+    padding-left: 30px;
+    color: white;
+    font-family: "Dancing Script";
+    font-size: 30px;
+    font-weight: bold;
+  }
+  input:not([type]):focus:not([readonly]),
+  input[type="text"]:not(.browser-default):focus:not([readonly]),
+  input[type="password"]:not(.browser-default):focus:not([readonly]),
+  input[type="email"]:not(.browser-default):focus:not([readonly]),
+  input[type="url"]:not(.browser-default):focus:not([readonly]),
+  input[type="time"]:not(.browser-default):focus:not([readonly]),
+  input[type="date"]:not(.browser-default):focus:not([readonly]),
+  input[type="datetime"]:not(.browser-default):focus:not([readonly]),
+  input[type="datetime-local"]:not(.browser-default):focus:not([readonly]),
+  input[type="tel"]:not(.browser-default):focus:not([readonly]),
+  input[type="number"]:not(.browser-default):focus:not([readonly]),
+  input[type="search"]:not(.browser-default):focus:not([readonly]),
+  textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: none;
+    box-shadow: none;
+  }
+}
+.anec--checkbox-field {
+  [type="checkbox"] + span:not(.lever),
+  span {
+    margin-right: 15px;
+    padding-left: 25px;
+  }
+  &.with-input {
+    [type="checkbox"].filled-in:not(:checked) + span:not(.lever):after {
+      top: 50%;
+    }
+    [type="checkbox"].filled-in:checked + span:not(.lever):before {
+      top: 50%;
+    }
+    [type="checkbox"].filled-in:checked + span:not(.lever):after {
+      top: 50%;
+    }
+    input[type="text"]:not(.browser-default) {
+      background: transparent;
+      border-bottom: 1px dashed black;
+      border-radius: 0;
+      color: black;
+      padding-left: 15px;
+      &:hover,
+      &:focus {
+        border-bottom: 1px dashed black;
+      }
+    }
+  }
+}
