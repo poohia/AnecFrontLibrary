@@ -8,7 +8,7 @@ import Checkbox from "../Checkbox";
 type FormProps = React.HtmlHTMLAttributes<HTMLFormElement>;
 
 const Form = ({ children, ...rest }: FormProps) => (
-  <form className="annec--form" {...rest}>
+  <form className="anec--form" {...rest}>
     <div className="row">{children}</div>
   </form>
 );
