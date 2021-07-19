@@ -11,6 +11,7 @@
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "materialize-css": "^1.0.0-rc.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -21,15 +22,29 @@
     "start": "react-scripts start",
     "copy-ts": "mkdir -p build; cp ./src/*.d.ts ./build",
     "build-ts": "rm -rf build/**/*.d.ts; tsc --emitDeclarationOnly",
-    "build": "npm run build-ts; npm run copy-ts; babel src --out-dir build --extensions \".js,.ts,.tsx\" --verbose",
+    "build": "npm run build-ts; npm run copy-ts; babel src --out-dir build --extensions \".js,.ts,.tsx\" --verbose; npm run build-sass",
     "build-yalc": "npm run build; yalc publish --push --private",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sass": "sass -w ./src/styles",
+    "build-sass": "sass --style compressed --no-source-map ./src/styles/index.scss:./build/index.css",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   },
   "browserslist": {
@@ -57,8 +72,15 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-stage-1": "^7.0.0",
     "@babel/preset-typescript": "^7.1.0",
+    "@storybook/addon-actions": "^6.3.4",
+    "@storybook/addon-essentials": "^6.3.4",
+    "@storybook/addon-links": "^6.3.4",
+    "@storybook/node-logger": "^6.3.4",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.3.4",
     "babel-jest": "^24.7.1",
     "babel-loader": "^8.0.6",
-    "babel-plugin-syntax-dynamic-import": "^6.18.0"
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "sass": "^1.35.2"
   }
 }

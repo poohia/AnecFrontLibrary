@@ -1,9 +1,13 @@
 import React from "react";
+import "../styles/modules/button.css";
 
 const Button = ({ children, ...rest }: any) => (
-  <button style={{ backgroundColor: "orange", color: "white" }} {...rest}>
-    {children}
-  </button>
+  <>
+    <a className="waves-effect waves-light btn primary">
+      <i className="material-icons right">cloud</i>
+      {children}
+    </a>
+  </>
 );
 
 export default Button;
