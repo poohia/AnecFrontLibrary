@@ -37,7 +37,7 @@
         rest = _objectWithoutProperties(_ref, _excluded);
 
     return /*#__PURE__*/_react.default.createElement("form", _extends({
-      className: "annec--form"
+      className: "anec--form"
     }, rest), /*#__PURE__*/_react.default.createElement("div", {
       className: "row"
     }, children));
