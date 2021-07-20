@@ -22,7 +22,7 @@
     "start": "react-scripts start",
     "copy-ts": "mkdir -p build; cp ./src/*.d.ts ./build",
     "build-ts": "rm -rf build/**/*.d.ts; tsc --emitDeclarationOnly",
-    "build": "npm run build-ts; npm run copy-ts; babel src --out-dir build --extensions \".js,.ts,.tsx\" --verbose; npm run build-sass; npm run awsupload",
+    "build": "npm run build-ts; npm run copy-ts; babel src --out-dir build --extensions \".js,.ts,.tsx\" --verbose; npm run build-sass; npm run awsinvalide; npm run awsupload",
     "build-yalc": "npm run build; yalc publish --push --private",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -30,7 +30,8 @@
     "build-sass": "sass --style compressed --no-source-map ./src/index.scss:./build/index.css",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "awsupload": "aws s3 cp build/index.css s3://elasticbeanstalk-us-east-1-942663847814/dist/index.css --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers"
+    "awsupload": "aws s3 rm s3://elasticbeanstalk-us-east-1-942663847814/dist/index.css; aws s3 cp build/index.css s3://elasticbeanstalk-us-east-1-942663847814/dist/index.css --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers",
+    "awsinvalide": "aws cloudfront create-invalidation --distribution-id E2HQUMAOS9V4K5 --paths /dist/index.css"
   },
   "eslintConfig": {
     "extends": [
