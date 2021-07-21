@@ -19,7 +19,7 @@ const Loader = ({
   }, [className, show]);
   if (!show) return <></>;
   return (
-    <div className={classNameValue}>
+    <div className={classNameValue} {...rest}>
       <div>{children}</div>
       <div className="progress">
         <div className="indeterminate"></div>
