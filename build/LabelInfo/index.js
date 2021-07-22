@@ -20,7 +20,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   });
   _exports.default = void 0;
   _react = _interopRequireWildcard(_react);
-  var _excluded = ["children", "fluid", "className", "icon", "preset", "animate"];
+  var _excluded = ["children", "className", "animate", "like"];
 
   function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -32,38 +32,38 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
   function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-  var Button = function Button(_ref) {
+  var LabelInfo = function LabelInfo(_ref) {
     var children = _ref.children,
-        fluid = _ref.fluid,
         _ref$className = _ref.className,
         className = _ref$className === void 0 ? "" : _ref$className,
-        icon = _ref.icon,
-        _ref$preset = _ref.preset,
-        preset = _ref$preset === void 0 ? "primary" : _ref$preset,
-        animate = _ref.animate,
+        _ref$animate = _ref.animate,
+        animate = _ref$animate === void 0 ? false : _ref$animate,
+        _ref$like = _ref.like,
+        like = _ref$like === void 0 ? "title" : _ref$like,
         rest = _objectWithoutProperties(_ref, _excluded);
 
     var classNameValue = (0, _react.useMemo)(function () {
-      var value = "anec--btn waves-effect btn";
-
-      if (fluid) {
-        value += " fluid";
-      }
+      var value = "anec--game-label-info";
 
       if (animate) {
-        value += " animate__animated animate__rubberBand";
+        value += " animate__animated animate__backInUp";
       }
 
-      value += " anec--btn-".concat(preset);
+      value += " anec--game-label-info-".concat(like);
       return "".concat(value, " ").concat(className);
-    }, [className, fluid, preset, animate]);
-    return /*#__PURE__*/_react.default.createElement("button", _extends({
+    }, [className, animate, like]);
+
+    if (like === "title") {
+      return /*#__PURE__*/_react.default.createElement("h2", _extends({
+        className: classNameValue
+      }, rest), children);
+    }
+
+    return /*#__PURE__*/_react.default.createElement("p", _extends({
       className: classNameValue
-    }, rest), icon && /*#__PURE__*/_react.default.createElement("i", {
-      className: "material-icons right"
-    }, icon), children);
+    }, rest), children);
   };
 
-  var _default = Button;
+  var _default = LabelInfo;
   _exports.default = _default;
 });

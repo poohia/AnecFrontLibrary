@@ -6,7 +6,7 @@ import "../index.css";
 import Form from ".";
 
 export default {
-  title: "Components/Form",
+  title: "Default/Form",
   component: Form,
 } as Meta;
 

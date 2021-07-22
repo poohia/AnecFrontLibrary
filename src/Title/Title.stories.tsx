@@ -7,7 +7,7 @@ import "../index.css";
 import Title from ".";
 
 export default {
-  title: "Components/Title",
+  title: "Default/Title",
   component: Title,
 } as Meta;
 

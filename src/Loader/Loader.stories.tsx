@@ -6,7 +6,7 @@ import "../index.css";
 import Loader from ".";
 
 export default {
-  title: "Components/Loader",
+  title: "Default/Loader",
   component: Loader,
 } as Meta;
 

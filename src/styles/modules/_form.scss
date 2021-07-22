@@ -93,3 +93,24 @@
     }
   }
 }
+.anec--game-input-container {
+  width: 100%;
+  .anec--game-input {
+    color: white;
+    font-family: "Dancing Script";
+    font-size: 2em !important;
+    padding-left: 10px !important;
+  }
+  position: relative;
+  .anec--game-input-loader {
+    position: absolute;
+    right: 3%;
+    top: 0;
+    .spinner-layer {
+      border-color: white;
+    }
+  }
+  .helper-text {
+    color: white;
+  }
+}

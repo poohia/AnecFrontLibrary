@@ -1,8 +1,10 @@
 import React, { useMemo } from "react";
 
 type ButtonProps = JSX.IntrinsicElements["button"] & {
+  preset?: "primary" | "secondary";
   icon?: string;
   fluid?: boolean;
+  animate?: boolean;
 };
 
 const Button = ({
@@ -10,6 +12,8 @@ const Button = ({
   fluid,
   className = "",
   icon,
+  preset = "primary",
+  animate,
   ...rest
 }: ButtonProps) => {
   const classNameValue = useMemo(() => {
@@ -17,8 +21,12 @@ const Button = ({
     if (fluid) {
       value += " fluid";
     }
+    if (animate) {
+      value += " animate__animated animate__rubberBand";
+    }
+    value += ` anec--btn-${preset}`;
     return `${value} ${className}`;
-  }, [className, fluid]);
+  }, [className, fluid, preset, animate]);
   return (
     <button className={classNameValue} {...rest}>
       {icon && <i className="material-icons right">{icon}</i>}

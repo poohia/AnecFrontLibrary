@@ -4,3 +4,5 @@ export { default as Form } from "./Form";
 export { default as Input } from "./Input";
 export { default as Loader } from "./Loader";
 export { default as Title } from "./Title";
+export { default as LabelInfo } from "./LabelInfo";
+export { default as InputGame } from "./InputGame";

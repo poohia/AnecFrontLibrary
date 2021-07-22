@@ -8,4 +8,16 @@
   &.btn-small:hover {
     background-color: $primary;
   }
+  &.anec--btn-secondary {
+    background-color: $secondary;
+    color: $primary;
+    &.fluid {
+      width: 100%;
+    }
+    &.btn:hover,
+    &.btn-large:hover,
+    &.btn-small:hover {
+      background-color: $secondary;
+    }
+  }
 }

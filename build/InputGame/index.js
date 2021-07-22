@@ -20,7 +20,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   });
   _exports.default = void 0;
   _react = _interopRequireWildcard(_react);
-  var _excluded = ["children", "fluid", "className", "icon", "preset", "animate"];
+  var _excluded = ["children", "className", "animate", "loading", "helperText"];
 
   function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -32,38 +32,52 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
   function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-  var Button = function Button(_ref) {
+  var InputGame = function InputGame(_ref) {
     var children = _ref.children,
-        fluid = _ref.fluid,
         _ref$className = _ref.className,
         className = _ref$className === void 0 ? "" : _ref$className,
-        icon = _ref.icon,
-        _ref$preset = _ref.preset,
-        preset = _ref$preset === void 0 ? "primary" : _ref$preset,
-        animate = _ref.animate,
+        _ref$animate = _ref.animate,
+        animate = _ref$animate === void 0 ? false : _ref$animate,
+        loading = _ref.loading,
+        helperText = _ref.helperText,
         rest = _objectWithoutProperties(_ref, _excluded);
 
     var classNameValue = (0, _react.useMemo)(function () {
-      var value = "anec--btn waves-effect btn";
-
-      if (fluid) {
-        value += " fluid";
-      }
+      var value = "anec--game-input";
 
       if (animate) {
-        value += " animate__animated animate__rubberBand";
+        value += " animate__animated animate__backInUp";
       }
 
-      value += " anec--btn-".concat(preset);
       return "".concat(value, " ").concat(className);
-    }, [className, fluid, preset, animate]);
-    return /*#__PURE__*/_react.default.createElement("button", _extends({
+    }, [className, animate]);
+    return /*#__PURE__*/_react.default.createElement("div", {
+      className: "anec--game-input-container"
+    }, /*#__PURE__*/_react.default.createElement("input", _extends({
+      id: "pseudo",
+      type: "text",
       className: classNameValue
-    }, rest), icon && /*#__PURE__*/_react.default.createElement("i", {
-      className: "material-icons right"
-    }, icon), children);
+    }, rest)), loading && /*#__PURE__*/_react.default.createElement("div", {
+      className: "anec--game-input-loader preloader-wrapper small active"
+    }, /*#__PURE__*/_react.default.createElement("div", {
+      className: "spinner-layer"
+    }, /*#__PURE__*/_react.default.createElement("div", {
+      className: "circle-clipper left"
+    }, /*#__PURE__*/_react.default.createElement("div", {
+      className: "circle"
+    })), /*#__PURE__*/_react.default.createElement("div", {
+      className: "gap-patch"
+    }, /*#__PURE__*/_react.default.createElement("div", {
+      className: "circle"
+    })), /*#__PURE__*/_react.default.createElement("div", {
+      className: "circle-clipper right"
+    }, /*#__PURE__*/_react.default.createElement("div", {
+      className: "circle"
+    })))), helperText && /*#__PURE__*/_react.default.createElement("span", {
+      className: "helper-text"
+    }, helperText));
   };
 
-  var _default = Button;
+  var _default = InputGame;
   _exports.default = _default;
 });
