@@ -11,6 +11,15 @@ export default {
   component: Title,
 } as Meta;
 
-export const ButtonComponent = () => (
-  <Title subtitle="Lorem Ipsum">Title</Title>
+export const TitleComponent = () => (
+  <>
+    <Title subtitle="Lorem Ipsum">Title</Title>
+    <Title as="h2" subtitle="Subtitle">
+      Title
+    </Title>
+    <Title as="h3">Title</Title>
+    <Title as="h4">Title</Title>
+    <Title as="h5">Title</Title>
+    <Title as="h6">Title</Title>
+  </>
 );

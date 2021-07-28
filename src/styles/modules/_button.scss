@@ -20,4 +20,40 @@
       background-color: $secondary;
     }
   }
+  &.anec--btn-success {
+    background-color: $success;
+    &.unselected {
+      background-color: rgba($success, 0.5);
+    }
+    color: white;
+    &.fluid {
+      width: 100%;
+    }
+    &.btn:hover,
+    &.btn-large:hover,
+    &.btn-small:hover {
+      background-color: $success;
+    }
+  }
+  &.anec--btn-danger {
+    background-color: $danger;
+    &.unselected {
+      background-color: rgba($danger, 0.5);
+    }
+    color: white;
+    &.fluid {
+      width: 100%;
+    }
+    &.btn:hover,
+    &.btn-large:hover,
+    &.btn-small:hover {
+      background-color: $danger;
+    }
+  }
+}
+.anec--switch-btn {
+  display: flex;
+  :first-child {
+    margin-right: 5px;
+  }
 }

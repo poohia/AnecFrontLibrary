@@ -7,3 +7,12 @@
   font-size: 2em;
   margin-top: 0;
 }
+.anec--theme-list {
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+  > div {
+    flex-basis: 15%;
+    margin-right: 10px;
+  }
+}

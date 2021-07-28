@@ -2,17 +2,17 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["exports", "react"], factory);
+    define(["exports", "react", "./icons"], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require("react"));
+    factory(exports, require("react"), require("./icons"));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports, global.react);
+    factory(mod.exports, global.react, global.icons);
     global.index = mod.exports;
   }
-})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function (_exports, _react) {
+})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function (_exports, _react, _icons) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
@@ -20,7 +20,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   });
   _exports.default = void 0;
   _react = _interopRequireWildcard(_react);
-  var _excluded = ["children", "id", "as", "className", "subtitle"];
+  var _excluded = ["type", "preset", "className", "animate", "onClick"];
 
   function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -32,59 +32,65 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
   function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-  var Title = function Title(_ref) {
-    var children = _ref.children,
-        id = _ref.id,
-        _ref$as = _ref.as,
-        as = _ref$as === void 0 ? "h1" : _ref$as,
+  var Avatar = function Avatar(_ref) {
+    var type = _ref.type,
+        _ref$preset = _ref.preset,
+        preset = _ref$preset === void 0 ? "default" : _ref$preset,
         _ref$className = _ref.className,
         className = _ref$className === void 0 ? "" : _ref$className,
-        subtitle = _ref.subtitle,
+        animate = _ref.animate,
+        _onClick = _ref.onClick,
         rest = _objectWithoutProperties(_ref, _excluded);
 
     var classNameValue = (0, _react.useMemo)(function () {
-      var value = "anec--title";
+      var value = "anec--avatar";
+      value += " anec--avatar-".concat(preset);
+
+      if (animate) {
+        value += " animate__animated animate__backInUp";
+      }
+
       return "".concat(value, " ").concat(className);
-    }, [className]);
+    }, [className, preset, animate]);
+    var CurrAvatar = (0, _react.useMemo)(function () {
+      switch (type) {
+        case "administrator":
+          return _icons.Administrator;
 
-    switch (as) {
-      case "h1":
-        return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", _extends({
-          className: classNameValue
-        }, rest), children), subtitle && /*#__PURE__*/_react.default.createElement("p", {
-          className: "anec--title-subtitle"
-        }, subtitle));
+        case "dinosaur":
+          return _icons.Dinosaur;
 
-      case "h2":
-        return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, " ", /*#__PURE__*/_react.default.createElement("h2", _extends({
-          className: classNameValue
-        }, rest), children), subtitle && /*#__PURE__*/_react.default.createElement("p", {
-          className: "anec--title-subtitle"
-        }, subtitle));
+        case "lgbtIcon":
+          return _icons.LgbtIcon;
 
-      case "h3":
-        return /*#__PURE__*/_react.default.createElement("h3", _extends({
-          className: classNameValue
-        }, rest), children);
+        case "rainbowFlag":
+          return _icons.RainbowFlag;
 
-      case "h4":
-        return /*#__PURE__*/_react.default.createElement("h4", _extends({
-          className: classNameValue
-        }, rest), children);
+        case "cat":
+          return _icons.Cat;
 
-      case "h5":
-        return /*#__PURE__*/_react.default.createElement("h5", _extends({
-          className: classNameValue
-        }, rest), children);
+        case "kitty":
+          return _icons.Kitty;
 
-      case "h6":
-      default:
-        return /*#__PURE__*/_react.default.createElement("h6", _extends({
-          className: classNameValue
-        }, rest), children);
-    }
+        case "man":
+          return _icons.Man;
+
+        case "woman":
+          return _icons.Woman;
+
+        case "hacker":
+        default:
+          return _icons.Hacker;
+      }
+    }, [type]);
+    return /*#__PURE__*/_react.default.createElement("div", _extends({
+      className: classNameValue,
+      onClick: function onClick() {
+        return _onClick && _onClick(type);
+      }
+    }, rest), /*#__PURE__*/_react.default.createElement(CurrAvatar, null), preset === "card" && /*#__PURE__*/_react.default.createElement("p", null, type));
   };
 
-  var _default = Title;
+  var _default = Avatar;
   _exports.default = _default;
 });

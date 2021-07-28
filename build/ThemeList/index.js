@@ -20,7 +20,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   });
   _exports.default = void 0;
   _react = _interopRequireWildcard(_react);
-  var _excluded = ["children", "id", "as", "className", "subtitle"];
+  var _excluded = ["children", "id", "className", "themes"];
 
   function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -32,59 +32,28 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
   function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-  var Title = function Title(_ref) {
+  var ThemeList = function ThemeList(_ref) {
     var children = _ref.children,
         id = _ref.id,
-        _ref$as = _ref.as,
-        as = _ref$as === void 0 ? "h1" : _ref$as,
         _ref$className = _ref.className,
         className = _ref$className === void 0 ? "" : _ref$className,
-        subtitle = _ref.subtitle,
+        themes = _ref.themes,
         rest = _objectWithoutProperties(_ref, _excluded);
 
     var classNameValue = (0, _react.useMemo)(function () {
-      var value = "anec--title";
+      var value = "anec--theme-list";
       return "".concat(value, " ").concat(className);
     }, [className]);
-
-    switch (as) {
-      case "h1":
-        return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", _extends({
-          className: classNameValue
-        }, rest), children), subtitle && /*#__PURE__*/_react.default.createElement("p", {
-          className: "anec--title-subtitle"
-        }, subtitle));
-
-      case "h2":
-        return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, " ", /*#__PURE__*/_react.default.createElement("h2", _extends({
-          className: classNameValue
-        }, rest), children), subtitle && /*#__PURE__*/_react.default.createElement("p", {
-          className: "anec--title-subtitle"
-        }, subtitle));
-
-      case "h3":
-        return /*#__PURE__*/_react.default.createElement("h3", _extends({
-          className: classNameValue
-        }, rest), children);
-
-      case "h4":
-        return /*#__PURE__*/_react.default.createElement("h4", _extends({
-          className: classNameValue
-        }, rest), children);
-
-      case "h5":
-        return /*#__PURE__*/_react.default.createElement("h5", _extends({
-          className: classNameValue
-        }, rest), children);
-
-      case "h6":
-      default:
-        return /*#__PURE__*/_react.default.createElement("h6", _extends({
-          className: classNameValue
-        }, rest), children);
-    }
+    return /*#__PURE__*/_react.default.createElement("div", _extends({
+      className: classNameValue
+    }, rest), themes.map(function (theme) {
+      return /*#__PURE__*/_react.default.createElement("div", {
+        key: theme,
+        className: "animate__animated animate__flipInY"
+      }, theme);
+    }));
   };
 
-  var _default = Title;
+  var _default = ThemeList;
   _exports.default = _default;
 });

@@ -1,0 +1,92 @@
+.anec--avatar {
+  width: 30px;
+}
+
+.anec--avatar-card {
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  width: 150px;
+  margin: 10px;
+  cursor: pointer;
+  text-align: center;
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.anec--user-list {
+  color: white;
+  .anec--user-list-item {
+    position: relative;
+    background-color: white;
+    padding: 10px 5px 5px 5px;
+    border-radius: 3px;
+    display: flex;
+    color: $primary;
+    margin-bottom: 5px;
+    line-height: 9px;
+
+    > div {
+      &:nth-child(2) {
+        flex-basis: 10%;
+        margin-right: 3%;
+      }
+      &:nth-child(3) {
+        flex-basis: 85%;
+      }
+    }
+    .anec--user-list-item-user-avatar {
+      .anec--avatar {
+        width: 100%;
+      }
+    }
+    .anec--user-list-item-user-info {
+      display: flex;
+      flex-direction: column;
+      > div {
+        &:nth-child(1) {
+          font-family: "Dancing Script";
+          text-transform: uppercase;
+          font-weight: bold;
+          margin-bottom: 5px;
+        }
+        &:nth-child(2) {
+          font-style: italic;
+        }
+        &:last-child {
+          display: flex;
+          justify-content: flex-end;
+        }
+      }
+    }
+    .anec--user-list-item-user-info-true {
+      color: $success;
+    }
+    .anec--user-list-item-user-info-false {
+      color: $danger;
+    }
+    p {
+      margin-bottom: 0;
+    }
+    .anec--user-list-item-user-info-connection-info {
+      cursor: pointer;
+      width: 10px;
+      height: 10px;
+      background: black;
+      border-radius: 50%;
+      margin-right: 10px;
+      float: left;
+      &.connected {
+        background: $success;
+      }
+      &.unconnected {
+        background: $danger;
+      }
+      position: absolute;
+      top: 5px;
+      right: 5px;
+    }
+  }
+}
