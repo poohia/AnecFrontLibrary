@@ -1,8 +1,4 @@
-export type Choice<T = any> = {
-  label: string;
-  value: any;
-  icon?: T;
-};
+import { Choice as ChoiceType } from "./types";
 export { default as Button } from "./Button";
 export { default as Checkbox } from "./Checkbox";
 export { default as Form } from "./Form";
@@ -15,3 +11,6 @@ export { default as Avatar } from "./Avatar";
 export { default as AvatarList } from "./AvatarList";
 export { default as ThemeList } from "./ThemeList";
 export { default as SwitchBtn } from "./SwitchBtn";
+export { default as ShowScoringComponent } from "./ShowScoringComponent";
+
+export type Choice<T = any> = ChoiceType<T>;

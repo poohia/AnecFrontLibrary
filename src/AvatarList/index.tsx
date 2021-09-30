@@ -1,16 +1,9 @@
 import React from "react";
 
-import Avatar, { AvatarType } from "../Avatar";
+import Avatar from "../Avatar";
+import { User } from "../types";
 
-type User = {
-  userID: string;
-  avatar: AvatarType;
-  username: string;
-  score: number;
-  connected: boolean;
-  vote?: "true" | "false";
-};
-type AvatarListProps = {
+export type AvatarListProps = {
   users: User[];
 };
 

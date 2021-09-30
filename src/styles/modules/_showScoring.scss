@@ -1,0 +1,22 @@
+.anec--show-scoring-one-winner-content {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  > div {
+    margin-bottom: 10px;
+  }
+  .anec--show-scoring-one-winner-content-row-placement {
+    width: 100%;
+    svg {
+      width: 32px;
+      margin-right: 10px;
+      height: auto;
+    }
+    border-bottom: 1px solid rgb(158, 158, 158);
+  }
+  .anec--user-list {
+    svg {
+      width: 100px;
+    }
+  }
+}

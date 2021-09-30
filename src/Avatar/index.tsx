@@ -1,4 +1,6 @@
 import React, { useMemo } from "react";
+
+import { AvatarType } from "../types";
 import {
   Hacker,
   Woman,
@@ -11,16 +13,6 @@ import {
   Administrator,
 } from "./icons";
 
-export type AvatarType =
-  | "administrator"
-  | "hacker"
-  | "woman"
-  | "man"
-  | "kitty"
-  | "cat"
-  | "rainbowFlag"
-  | "lgbtIcon"
-  | "dinosaur";
 type AvatarProps = JSX.IntrinsicElements["div"] & {
   type: AvatarType;
   preset?: "default" | "card";
