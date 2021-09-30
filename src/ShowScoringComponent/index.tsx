@@ -18,8 +18,6 @@ export const AvatarCard = ({ user }: { user: ScoringUsers }) => (
 const ShowScoringComponent = ({ users }: { users: ScoringUsers[] }) => {
   const { scoring } = useShowScoringComponent(users);
 
-  console.log("scoring", JSON.parse(JSON.stringify(scoring)));
-
   return (
     <div className="anec--show-scoring-one-winner-content">
       {scoring.map((score, i) => (

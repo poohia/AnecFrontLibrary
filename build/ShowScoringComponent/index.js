@@ -45,7 +45,6 @@
     var _useShowScoringCompon = (0, _useShowScoringComponent.default)(users),
         scoring = _useShowScoringCompon.scoring;
 
-    console.log("scoring", JSON.parse(JSON.stringify(scoring)));
     return /*#__PURE__*/_react.default.createElement("div", {
       className: "anec--show-scoring-one-winner-content"
     }, scoring.map(function (score, i) {

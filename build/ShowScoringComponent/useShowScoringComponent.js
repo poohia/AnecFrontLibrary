@@ -37,31 +37,28 @@
         setScoringState = _useState2[1];
 
     var setScoring = function setScoring(f, user) {
-      setScoringState(function (sc) {
-        if (sc.find(function (s) {
+      setScoringState(function (score) {
+        if (score.find(function (s) {
           return s.find(function (u) {
             return u.username === user.username;
           });
         })) {
-          return sc;
+          return score;
         }
 
-        return f(sc);
+        return f(score);
       });
     };
 
     (0, _react.useEffect)(function () {
-      console.log("useEffect", users);
       var i = 0;
       var lastScore = null;
       users.forEach(function (user, j) {
         var timeout = 500 * j;
 
         if (user.score !== lastScore) {
-          console.log("append user", user, lastScore);
           setTimeout(function () {
             setScoring(function (score) {
-              console.log("timeout append", score, i);
               var s = score;
 
               if (i > 2 && typeof s[i] === "undefined") {

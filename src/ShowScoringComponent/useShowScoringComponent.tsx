@@ -17,16 +17,13 @@ const useShowScoringComponent = (users: ScoringUsers[]) => {
   };
 
   useEffect(() => {
-    console.log("useEffect", users);
     let i = 0;
     let lastScore: number | null = null;
     users.forEach((user, j) => {
       const timeout = 500 * j;
       if (user.score !== lastScore) {
-        console.log("append user", user, lastScore);
         setTimeout(() => {
           setScoring((score) => {
-            console.log("timeout append", score, i);
             const s = score;
             if (i > 2 && typeof s[i] === "undefined") {
               s[i] = [user];
