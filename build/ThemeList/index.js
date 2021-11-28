@@ -2,17 +2,17 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["exports", "react"], factory);
+    define(["exports", "react", "./bavarder.png"], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require("react"));
+    factory(exports, require("react"), require("./bavarder.png"));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports, global.react);
+    factory(mod.exports, global.react, global.bavarder);
     global.index = mod.exports;
   }
-})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function (_exports, _react) {
+})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function (_exports, _react, _bavarder) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
@@ -20,7 +20,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   });
   _exports.default = void 0;
   _react = _interopRequireWildcard(_react);
+  _bavarder = _interopRequireDefault(_bavarder);
   var _excluded = ["children", "id", "className", "themes"];
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
   function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -49,8 +52,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     }, rest), themes.map(function (theme) {
       return /*#__PURE__*/_react.default.createElement("div", {
         key: theme,
-        className: "animate__animated animate__flipInY"
-      }, theme);
+        className: "anec--theme-list-theme animate__animated animate__flipInY"
+      }, /*#__PURE__*/_react.default.createElement("span", null, theme, "\xA0", /*#__PURE__*/_react.default.createElement("img", {
+        src: _bavarder.default,
+        alt: "theme icon"
+      })));
     }));
   };
 

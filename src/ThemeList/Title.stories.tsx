@@ -19,4 +19,8 @@ const themes = [
   "Enfance - Adolescence",
 ];
 
-export const TitleComponent = () => <ThemeList themes={themes} />;
+export const TitleComponent = () => (
+  <div style={{ backgroundColor: "white", padding: "30px" }}>
+    <ThemeList themes={themes} />
+  </div>
+);

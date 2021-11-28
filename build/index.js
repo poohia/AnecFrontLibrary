@@ -1,16 +1,16 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["exports", "./Button", "./Checkbox", "./Form", "./Input", "./Loader", "./Title", "./LabelInfo", "./InputGame", "./Avatar", "./AvatarList", "./ThemeList", "./SwitchBtn", "./ShowScoringComponent"], factory);
+    define(["exports", "./Button", "./Checkbox", "./Form", "./Input", "./Loader", "./Title", "./LabelInfo", "./InputGame", "./Avatar", "./AvatarList", "./ThemeList", "./SwitchBtn", "./ShowScoringComponent", "./ButtonGame"], factory);
   } else if (typeof exports !== "undefined") {
-    factory(exports, require("./Button"), require("./Checkbox"), require("./Form"), require("./Input"), require("./Loader"), require("./Title"), require("./LabelInfo"), require("./InputGame"), require("./Avatar"), require("./AvatarList"), require("./ThemeList"), require("./SwitchBtn"), require("./ShowScoringComponent"));
+    factory(exports, require("./Button"), require("./Checkbox"), require("./Form"), require("./Input"), require("./Loader"), require("./Title"), require("./LabelInfo"), require("./InputGame"), require("./Avatar"), require("./AvatarList"), require("./ThemeList"), require("./SwitchBtn"), require("./ShowScoringComponent"), require("./ButtonGame"));
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod.exports, global.Button, global.Checkbox, global.Form, global.Input, global.Loader, global.Title, global.LabelInfo, global.InputGame, global.Avatar, global.AvatarList, global.ThemeList, global.SwitchBtn, global.ShowScoringComponent);
+    factory(mod.exports, global.Button, global.Checkbox, global.Form, global.Input, global.Loader, global.Title, global.LabelInfo, global.InputGame, global.Avatar, global.AvatarList, global.ThemeList, global.SwitchBtn, global.ShowScoringComponent, global.ButtonGame);
     global.index = mod.exports;
   }
-})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function (_exports, _Button, _Checkbox, _Form, _Input, _Loader, _Title, _LabelInfo, _InputGame, _Avatar, _AvatarList, _ThemeList, _SwitchBtn, _ShowScoringComponent) {
+})(typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : this, function (_exports, _Button, _Checkbox, _Form, _Input, _Loader, _Title, _LabelInfo, _InputGame, _Avatar, _AvatarList, _ThemeList, _SwitchBtn, _ShowScoringComponent, _ButtonGame) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
@@ -94,6 +94,12 @@
       return _ShowScoringComponent.default;
     }
   });
+  Object.defineProperty(_exports, "ButtonGame", {
+    enumerable: true,
+    get: function get() {
+      return _ButtonGame.default;
+    }
+  });
   _Button = _interopRequireDefault(_Button);
   _Checkbox = _interopRequireDefault(_Checkbox);
   _Form = _interopRequireDefault(_Form);
@@ -107,6 +113,7 @@
   _ThemeList = _interopRequireDefault(_ThemeList);
   _SwitchBtn = _interopRequireDefault(_SwitchBtn);
   _ShowScoringComponent = _interopRequireDefault(_ShowScoringComponent);
+  _ButtonGame = _interopRequireDefault(_ButtonGame);
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 });

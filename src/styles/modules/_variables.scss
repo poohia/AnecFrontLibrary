@@ -1,5 +1,23 @@
-$primary: #34495e;
-$secondary: white;
-$black: #34495e;
-$danger: #eb445a;
-$success: #2dd36f;
+// $primary: #34495e;
+// $secondary: white;
+// $black: #34495e;
+// $danger: #eb445a;
+// $success: #2dd36f;
+
+:root {
+  --primary: #34495e;
+  --secondary: white;
+  --black: #34495e;
+  --danger: #eb445a;
+  --danger-contrast: #c0392b;
+  --success: #2dd36f;
+  --success-contrast: #27ae60;
+  --success-rgb: 45, 211, 111;
+  --danger-rgb: 235, 68, 90;
+
+  --blue: #2980b9;
+  --yellow: #f7bf4f;
+  --orange: #f1c40f;
+  --pink: #f78fb3;
+  --violet: #cd84f1;
+}

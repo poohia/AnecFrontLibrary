@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Meta } from "@storybook/react";
 
@@ -10,10 +10,14 @@ export default {
   component: SwitchBtn,
 } as Meta;
 
-export const LabelInfoComponent = () => (
-  <SwitchBtn
-    onChange={(choice) => console.log(choice)}
-    button1={{ label: "like", value: "like" }}
-    button2={{ label: "dislik", value: "dislike" }}
-  />
-);
+export const LabelInfoComponent = () => {
+  const [value, setValue] = useState("like");
+  return (
+    <SwitchBtn
+      onChange={(choice) => setValue(String(choice.value))}
+      button1={{ label: "Véridique", value: "like" }}
+      button2={{ label: "Fausse", value: "dislike" }}
+      value={value}
+    />
+  );
+};

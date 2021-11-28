@@ -1,29 +1,29 @@
 .anec--btn {
-  background-color: $primary;
+  background-color: var(--primary);
   &.fluid {
     width: 100%;
   }
   &.btn:hover,
   &.btn-large:hover,
   &.btn-small:hover {
-    background-color: $primary;
+    background-color: var(--primary);
   }
   &.anec--btn-secondary {
-    background-color: $secondary;
-    color: $primary;
+    background-color: var(--secondary);
+    color: var(--primary);
     &.fluid {
       width: 100%;
     }
     &.btn:hover,
     &.btn-large:hover,
     &.btn-small:hover {
-      background-color: $secondary;
+      background-color: var(--secondary);
     }
   }
   &.anec--btn-success {
-    background-color: $success;
+    background-color: var(--success);
     &.unselected {
-      background-color: rgba($success, 0.5);
+      background-color: rgba(var(--success-rgb), 0.5);
     }
     color: white;
     &.fluid {
@@ -32,13 +32,13 @@
     &.btn:hover,
     &.btn-large:hover,
     &.btn-small:hover {
-      background-color: $success;
+      background-color: var(--success);
     }
   }
   &.anec--btn-danger {
-    background-color: $danger;
+    background-color: var(--danger);
     &.unselected {
-      background-color: rgba($danger, 0.5);
+      background-color: rgba(var(--danger-rgb), 0.5);
     }
     color: white;
     &.fluid {
@@ -47,7 +47,7 @@
     &.btn:hover,
     &.btn-large:hover,
     &.btn-small:hover {
-      background-color: $danger;
+      background-color: var(--danger);
     }
   }
 }
@@ -56,4 +56,126 @@
   :first-child {
     margin-right: 5px;
   }
+}
+
+button.anec--btn-game {
+  padding: 15px;
+  border-radius: 3px;
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+  margin: 5px;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+
+  &:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    border-bottom: 1px solid;
+  }
+  &:focus {
+    outline: none;
+  }
+  &.animate {
+    transition: all 0.1s;
+    -webkit-transition: all 0.1s;
+    animation-fill-mode: none;
+  }
+  &.rounded {
+    border-radius: 24px;
+  }
+  &.blue {
+    color: white;
+    background-color: #3498db;
+    border-bottom: 5px solid var(--blue);
+    text-shadow: 0px -2px #2980b9;
+  }
+  &.black {
+    border-bottom: 5px solid black;
+    color: white;
+  }
+  &.default {
+    border-bottom: 5px solid #bababa;
+  }
+  &.whiteyellow {
+    border-bottom: 5px solid #fcc149;
+  }
+  &.whiteviolet {
+    border-bottom: 5px solid #4f376e;
+  }
+  &.whiteclearviolet {
+    border-bottom: 5px solid #d6d0ed;
+  }
+  &.success {
+    color: white;
+    background-color: #2ecc71;
+    border-bottom: 5px solid #27ae60;
+  }
+  &.danger {
+    color: white;
+    background-color: #e74c3c;
+    border-bottom: 5px solid #c0392b;
+  }
+  &.yellow {
+    color: white;
+    background-color: var(--yellow);
+    border-bottom: 5px solid #c79531;
+  }
+  &.maron {
+    color: white;
+    background-color: #bda26b;
+    border-bottom: 5px solid #8e7446;
+  }
+  &.orange {
+    color: white;
+    background-color: var(--orange) !important;
+    border-bottom: 5px solid #f0932b;
+  }
+  &.pink {
+    color: white;
+    background-color: var(--pink) !important;
+    border-bottom: 5px solid #cf6a87;
+  }
+  &.violet {
+    color: white;
+    background-color: var(--violet) !important;
+    border-bottom: 5px solid #c56cf0;
+  }
+  &.fluid {
+    width: 100%;
+  }
+  &::ng-deep {
+    img {
+      width: 32px;
+      float: left;
+    }
+    span {
+      position: relative;
+      top: 8px;
+      &.withoutimg {
+        top: 0;
+      }
+    }
+    ion-icon {
+      &.icon-info {
+        position: relative;
+        top: 8px;
+        width: 20px;
+        float: right;
+        color: rgb(46, 157, 227);
+      }
+    }
+  }
+}
+button.anec--btn-game.withoutimg {
+  &::ng-deep {
+    span {
+      top: 0;
+    }
+  }
+}
+button.anec--btn-game[disabled] {
+  transition: none;
+  cursor: default;
 }

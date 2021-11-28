@@ -1,0 +1,47 @@
+.anec--switch-btn {
+  display: flex;
+  justify-content: space-around;
+  .anec--switch-btn-button {
+    width: 220px;
+    height: 220px;
+    line-height: 220px;
+    border-radius: 50%;
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+    background: #000;
+    cursor: pointer;
+    position: relative;
+    border-bottom: 7px solid white;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+    i {
+      position: absolute;
+      top: 25%;
+      left: 45%;
+      transform: translate(-25%, -50%);
+      font-size: 50px;
+    }
+    &.anec--switch-btn-button-success {
+      background: rgba(var(--success-rgb), 1);
+      &.unselected {
+        background: rgba(var(--success-rgb), 0.5);
+      }
+      &:hover {
+        background: rgba(var(--success-rgb), 1);
+      }
+      border-color: var(--success-contrast);
+    }
+    &.anec--switch-btn-button-danger {
+      background: rgba(var(--danger-rgb), 1);
+      &.unselected {
+        background: rgba(var(--danger-rgb), 0.5);
+      }
+      &:hover {
+        background: rgba(var(--danger-rgb), 1);
+      }
+      border-color: var(--danger-contrast);
+    }
+  }
+}

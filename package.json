@@ -23,7 +23,7 @@
     "copy-ts": "mkdir -p build; cp ./src/*.d.ts ./build",
     "build-ts": "rm -rf build/**/*.d.ts; tsc --emitDeclarationOnly",
     "build": "npm run default-build; npm run build-aws",
-    "default-build": "cp src/index.d.ts src/index.ts; npm run build-ts; npm run copy-ts; babel src --out-dir build --extensions \".js,.ts,.tsx\" --verbose; npm run build-sass",
+    "default-build": "cp src/index.d.ts src/index.ts; npm run build-ts; npm run copy-ts; babel src --out-dir build --extensions \".js,.ts,.tsx\" --verbose --copy-files --no-copy-ignored; npm run build-sass; rm build/index.scss; rm -rf build/styles",
     "build-aws": "npm run awsinvalide; npm run awsupload",
     "build-yalc": "npm run default-build; yalc publish --push --private",
     "test": "react-scripts test",

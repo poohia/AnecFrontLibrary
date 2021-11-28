@@ -3,6 +3,8 @@ import React from "react";
 import Avatar from "../Avatar";
 import { User } from "../types";
 
+import UsersLogo from "./users.png";
+
 export type AvatarListProps = {
   users: User[];
 };
@@ -10,7 +12,10 @@ export type AvatarListProps = {
 const AvatarList = ({ users }: AvatarListProps) => {
   return (
     <div className="anec--user-list">
-      <p>Liste des utilisateurs : </p>
+      <div className="anec--user-list-title">
+        <img src={UsersLogo} alt="users logo" />
+        <p>Liste des utilisateurs :</p>
+      </div>
       {users.map((user) => (
         <div className="row anec--user-list-item" key={user.userID}>
           <div

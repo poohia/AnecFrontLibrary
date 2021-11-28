@@ -12,5 +12,6 @@ export { default as AvatarList } from "./AvatarList";
 export { default as ThemeList } from "./ThemeList";
 export { default as SwitchBtn } from "./SwitchBtn";
 export { default as ShowScoringComponent } from "./ShowScoringComponent";
+export { default as ButtonGame } from "./ButtonGame";
 
 export type Choice<T = any> = ChoiceType<T>;

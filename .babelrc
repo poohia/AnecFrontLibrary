@@ -9,7 +9,12 @@
     "@babel/proposal-object-rest-spread",
     "@babel/plugin-syntax-export-default-from"
   ],
-  "ignore": ["**/*.stories.js", "**/*.stories.tsx", "src/index.d.ts"],
+  "ignore": [
+    "**/*.stories.js",
+    "**/*.stories.tsx",
+    "src/index.d.ts",
+    "**/*.scss"
+  ],
   "env": {
     "test": {
       "plugins": ["@babel/plugin-transform-runtime"]

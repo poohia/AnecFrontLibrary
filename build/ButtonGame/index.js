@@ -20,7 +20,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   });
   _exports.default = void 0;
   _react = _interopRequireWildcard(_react);
-  var _excluded = ["children", "id", "className", "value", "onChange", "button1", "button2", "disabled"];
+  var _excluded = ["children", "fluid", "className", "icon", "preset", "animate"];
 
   function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -32,41 +32,38 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
   function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-  var SwitchBtn = function SwitchBtn(_ref) {
+  var ButtonGame = function ButtonGame(_ref) {
     var children = _ref.children,
-        id = _ref.id,
+        fluid = _ref.fluid,
         _ref$className = _ref.className,
         className = _ref$className === void 0 ? "" : _ref$className,
-        value = _ref.value,
-        onChange = _ref.onChange,
-        button1 = _ref.button1,
-        button2 = _ref.button2,
-        disabled = _ref.disabled,
+        icon = _ref.icon,
+        _ref$preset = _ref.preset,
+        preset = _ref$preset === void 0 ? "success" : _ref$preset,
+        animate = _ref.animate,
         rest = _objectWithoutProperties(_ref, _excluded);
 
     var classNameValue = (0, _react.useMemo)(function () {
-      var value = "anec--switch-btn";
+      var value = "anec--btn-game rounded";
+
+      if (fluid) {
+        value += " fluid";
+      }
+
+      if (animate) {
+        value += " animate animate__animated animate__rubberBand";
+      }
+
+      value += " ".concat(preset);
       return "".concat(value, " ").concat(className);
-    }, [className]);
-    return /*#__PURE__*/_react.default.createElement("div", _extends({
+    }, [className, fluid, preset, animate]);
+    return /*#__PURE__*/_react.default.createElement("button", _extends({
       className: classNameValue
-    }, rest), /*#__PURE__*/_react.default.createElement("div", {
-      className: "anec--switch-btn-button anec--switch-btn-button-success ".concat(!value || value !== button1.value ? "unselected" : ""),
-      onClick: function onClick() {
-        return onChange(button1);
-      }
-    }, /*#__PURE__*/_react.default.createElement("i", {
-      className: "material-icons"
-    }, button1.icon || "thumb_up"), button1.label), /*#__PURE__*/_react.default.createElement("div", {
-      className: "anec--switch-btn-button anec--switch-btn-button-danger ".concat(!value || value !== button2.value ? "unselected" : ""),
-      onClick: function onClick() {
-        return onChange(button2);
-      }
-    }, /*#__PURE__*/_react.default.createElement("i", {
-      className: "material-icons"
-    }, button2.icon || "thumb_down"), button2.label));
+    }, rest), icon && /*#__PURE__*/_react.default.createElement("i", {
+      className: "material-icons right"
+    }, icon), children);
   };
 
-  var _default = SwitchBtn;
+  var _default = ButtonGame;
   _exports.default = _default;
 });

@@ -1,6 +1,6 @@
 body {
   height: 100vh;
-  background-color: $primary !important;
+  background-color: var(--primary) !important;
 }
 #root {
   height: 100%;

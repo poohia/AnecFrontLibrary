@@ -12,7 +12,72 @@
   flex-wrap: wrap;
   color: white;
   > div {
-    flex-basis: 15%;
-    margin-right: 10px;
+    min-width: 15%;
+    margin: 10px;
+  }
+}
+.anec--theme-list-theme {
+  min-height: 50px;
+  height: 100%;
+  color: white;
+  background: var(--primary);
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  svg {
+    width: 32px;
+  }
+  .st0 {
+    fill: #ffffff;
+  }
+
+  .st1 {
+    fill: #d0481f;
+  }
+
+  .st2 {
+    fill: #f16723;
+  }
+
+  .st3 {
+    fill: #f05225;
+  }
+
+  .st4 {
+    fill: #ffe4b8;
+  }
+
+  .st5 {
+    fill: #e7d0a9;
+  }
+
+  .st6 {
+    fill: #d99816;
+  }
+
+  .st7 {
+    fill: #fbd20a;
+  }
+
+  .st8 {
+    fill: #faaf1a;
+  }
+
+  .st9 {
+    fill: #3769a5;
+  }
+
+  .st10 {
+    fill: #4e9bd4;
+  }
+
+  .st11 {
+    fill: #4077bb;
+  }
+  span {
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
   }
 }
