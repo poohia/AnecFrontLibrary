@@ -13,5 +13,6 @@ export { default as ThemeList } from "./ThemeList";
 export { default as SwitchBtn } from "./SwitchBtn";
 export { default as ShowScoringComponent } from "./ShowScoringComponent";
 export { default as ButtonGame } from "./ButtonGame";
+export { default as Modal } from "./Modal";
 
 export type Choice<T = any> = ChoiceType<T>;

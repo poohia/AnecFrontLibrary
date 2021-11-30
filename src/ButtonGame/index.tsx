@@ -14,7 +14,8 @@ type ButtonProps = JSX.IntrinsicElements["button"] & {
     | "maron"
     | "orange"
     | "pink"
-    | "violet";
+    | "violet"
+    | "paypal";
   icon?: string;
   fluid?: boolean;
   animate?: boolean;

@@ -37,5 +37,10 @@ export const ButtonComponent = () => (
     <Button icon="send" preset="violet" disabled>
       Button secondary
     </Button>
+    <br />
+    <br />
+    <Button icon="paypal" preset="paypal" animate>
+      Paypal button
+    </Button>
   </>
 );

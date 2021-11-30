@@ -142,6 +142,11 @@ button.anec--btn-game {
     background-color: var(--violet) !important;
     border-bottom: 5px solid #c56cf0;
   }
+  &.paypal {
+    color: white;
+    background-color: var(--paypal) !important;
+    border-bottom: 5px solid #0f2f41;
+  }
   &.fluid {
     width: 100%;
   }
