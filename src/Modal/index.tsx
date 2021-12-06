@@ -2,10 +2,14 @@ import React, { useEffect, useRef } from "react";
 
 declare const M: any;
 
-type LabelInfoProps = JSX.IntrinsicElements["div"] & {
+type LabelInfoProps = {
+  children: JSX.IntrinsicElements["div"]["children"];
+  className?: JSX.IntrinsicElements["div"]["className"];
   headerTxt?: string;
   onClose?: () => void;
 };
+
+let instance: any = null;
 
 const Modal = ({
   children,
@@ -17,21 +21,23 @@ const Modal = ({
   const modalRef = useRef(null);
 
   const close = () => {
-    if (modalRef.current) {
-      const { current } = modalRef;
-      const instance = M.Modal.init(current, {});
+    if (instance) {
       instance.close();
     }
-    if (onClose) {
-      onClose();
-    }
+    setTimeout(() => {
+      if (onClose) {
+        onClose();
+      }
+    }, 100);
   };
 
   useEffect(() => {
     setTimeout(() => {
       if (modalRef.current) {
         const { current } = modalRef;
-        const instance = M.Modal.init(current, {});
+        instance = M.Modal.init(current, {
+          dismissible: false,
+        });
         instance.open();
       }
     }, 200);

@@ -32,6 +32,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
   function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
+  var instance = null;
+
   var Modal = function Modal(_ref) {
     var children = _ref.children,
         _ref$className = _ref.className,
@@ -43,22 +45,24 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     var modalRef = (0, _react.useRef)(null);
 
     var close = function close() {
-      if (modalRef.current) {
-        var current = modalRef.current;
-        var instance = M.Modal.init(current, {});
+      if (instance) {
         instance.close();
       }
 
-      if (onClose) {
-        onClose();
-      }
+      setTimeout(function () {
+        if (onClose) {
+          onClose();
+        }
+      }, 100);
     };
 
     (0, _react.useEffect)(function () {
       setTimeout(function () {
         if (modalRef.current) {
           var current = modalRef.current;
-          var instance = M.Modal.init(current, {});
+          instance = M.Modal.init(current, {
+            dismissible: false
+          });
           instance.open();
         }
       }, 200);
