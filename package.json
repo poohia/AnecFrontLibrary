@@ -33,8 +33,8 @@
     "build-sass": "sass --style compressed --no-source-map ./src/index.scss:./build/index.css",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "awsupload": "aws s3 rm s3://elasticbeanstalk-us-east-1-942663847814/dist/index.css; aws s3 cp build/index.css s3://elasticbeanstalk-us-east-1-942663847814/dist/index.css --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers",
-    "awsinvalide": "aws cloudfront create-invalidation --distribution-id E2HQUMAOS9V4K5 --paths /dist/index.css"
+    "awsupload": "aws s3 rm s3://anecbucket/dist/index.css; aws s3 cp build/index.css s3://anecbucket/dist/index.css --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers",
+    "awsinvalide": "aws cloudfront create-invalidation --distribution-id E6GDL3VSKQ95I --paths /dist/index.css"
   },
   "eslintConfig": {
     "extends": [
